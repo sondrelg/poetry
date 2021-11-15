@@ -39,7 +39,7 @@ cachecontrol = { version = "^0.12.9", extras = ["filecache"] }
 cachy = "^0.3.0"
 cleo = "^1.0.0a4"
 crashtest = "^0.3.0"
-dataclasses = { version = "^0.8", python = "~3.6" }
+dataclasses = { version = "^0.8", python = "<3.7" }
 entrypoints = "^0.3"
 html5lib = "^1.0"
 importlib-metadata = { version = "^1.6.0", python = "<3.8" }
@@ -55,15 +55,15 @@ tomlkit = ">=0.7.0,<1.0.0"
 virtualenv = "(>=20.4.3,<20.4.5 || >=20.4.7)"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2"
+tox = "^3.18"
+pytest = "^6.1"
 pytest-cov = "^2.8"
 pytest-mock = "^3.5"
-pre-commit = { version = "^2.6", python = "^3.6.1" }
-tox = "^3.18"
 pytest-sugar = "^0.9"
+pre-commit = { version = "^2.6", python = "^3.6.1" }
+deepdiff = "^5.0"
 httpretty = "^1.0"
 zipp = { version = "^3.4", python = "<3.8"}
-deepdiff = "^5.0"
 
 [tool.poetry.scripts]
 poetry = "poetry.console.application:main"
