@@ -51,8 +51,7 @@ jobs:
         run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
 
       - name: Bootstrap poetry
-        run: |
-          curl -sL https://install.python-poetry.org | python - -y ${{ matrix.bootstrap-args }}
+        run: curl -sL https://install.python-poetry.org | python - -y ${{ matrix.bootstrap-args }}
 
       - name: Update PATH
         if: ${{ matrix.os != 'Windows' }}
@@ -79,8 +78,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Install pytest plugin
-        run: poetry run pip install pytest-github-actions-annotate-failures
-
       - name: Run pytest
-        run: poetry run python -m pytest -p no:sugar -q tests/
+        run: poetry run python -m pytest -vv --color=yes -p no:clarity -p no:sugar --cov=src/poetry --cov-report xml tests/
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v2

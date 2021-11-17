@@ -54,16 +54,20 @@ entrypoints = "^0.3"
 importlib-metadata = {version = "^1.6.0", python = "<3.8"}
 dataclasses = {version = "^0.8", python = "~3.6"}
 
+
 [tool.poetry.dev-dependencies]
+tox = "^3.18"
 pytest = "^6.2"
 pytest-cov = "^2.8"
 pytest-mock = "^3.5"
-pre-commit = { version = "^2.6", python = "^3.6.1" }
-tox = "^3.18"
 pytest-sugar = "^0.9"
+pytest-clarity = "^1.0.1"
+pytest-github-actions-annotate-failures = "^0.1.5"
+coverage = { version = "^6.1.2", extras = ["toml"] }
+pre-commit = { version = "^2.6", python = "^3.6.1" }
+deepdiff = "^5.0"
 httpretty = "^1.0"
 zipp = { version = "^3.4", python = "<3.8"}
-deepdiff = "^5.0"
 
 [tool.poetry.scripts]
 poetry = "poetry.console.application:main"
