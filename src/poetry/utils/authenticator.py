@@ -8,7 +8,6 @@ from typing import Dict
 from typing import Optional
 from typing import Tuple
 
-import requests
 import requests.auth
 import requests.exceptions
 

@@ -15,7 +15,6 @@ from typing import List
 from typing import Optional
 from urllib.parse import quote
 
-import requests
 import requests.auth
 
 from cachecontrol import CacheControl
